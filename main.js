@@ -5,6 +5,7 @@ function init(){
 }
 var overAllRating;
 var baller;
+var ballers = [];
 var numOfPlayers = function() {
   var $select = $(".dropdownMenu");
   var showcounter = 100;
@@ -15,8 +16,11 @@ var numOfPlayers = function() {
 
 var addAPlayer = function(){
   baller = $('#nameInput').val();
+  overAllRating = $('.dropdownMenu').val();
   document.getElementById('nameInput').value = '';
+  ballers.push({name: baller, rating: overAllRating});
 
 
   console.log(baller);
+  console.log(overAllRating);
 }
