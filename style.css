@@ -1,4 +1,11 @@
+p{
+  text-align: center;
+}
 
+.increaseFontSize{
+  font-size: 30px;
+  color: red;
+}
 
 .availPlayers{
   text-align: center;
@@ -8,9 +15,10 @@
   width: 250px;
 }
 
-.boxes>div {
+.boxes {
     border: 2px solid gray;
     height: 160px;
     width: 250px;
     display: inline-block;
+    background-color: green;
 }

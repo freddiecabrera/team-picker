@@ -1,11 +1,18 @@
+
+
 $(document).ready(init);
 function init(){
   numOfPlayers();
   $('.button').click(addAPlayer);
+  $('.boxes').on('click', 'p', highlighter);
+  $('#boxes').on('click', '.boxes', playerSelected);
+
 }
+
 var overAllRating;
 var baller;
 var ballers = [];
+
 
 //give me a drop down menu from 60 - 100
 var numOfPlayers = function() {
@@ -25,4 +32,18 @@ var addAPlayer = function(){
   var ballerElement = $('<p></p>').text(baller).addClass(overAllRating);
   ballers.push({name: baller, rating: overAllRating});
   $('.availPlayerBox').append(ballerElement);//.setAttribute("id", overAllRating);
+};
+
+var highlighter = function(event){
+  event.stopPropagation();
+  $(this).addClass('increaseFontSize')
+}
+
+var playerSelected = function(event){
+
+  event.stopPropagation();
+  var $increaseFontSize = $('.increaseFontSize');
+  $('.increaseFontSize').detach();
+  $(this).append($increaseFontSize);
+  $increaseFontSize.removeClass('increaseFontSize');
 };
