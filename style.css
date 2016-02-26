@@ -1,0 +1,16 @@
+
+
+.availPlayers{
+  text-align: center;
+  margin: 20px;
+  border: 2px solid gray;
+  min-height: 160px;
+  width: 250px;
+}
+
+.boxes>div {
+    border: 2px solid gray;
+    height: 160px;
+    width: 250px;
+    display: inline-block;
+}
