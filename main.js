@@ -4,7 +4,7 @@ $(document).ready(init);
 function init(){
   numOfPlayers();
   $('.button').click(addAPlayer);
-  $('.boxes').on('click', 'p', highlighter);
+  $('.boxes').on('click', 'p', highlight);
   $('#boxes').on('click', '.boxes', playerSelected);
 
 }
@@ -31,16 +31,19 @@ var addAPlayer = function(){
   document.getElementById('nameInput').value = '';
   var ballerElement = $('<p></p>').text(baller).addClass(overAllRating);
   ballers.push({name: baller, rating: overAllRating});
-  $('.availPlayerBox').append(ballerElement);//.setAttribute("id", overAllRating);
+  $('.availPlayerBox').append(ballerElement);
 };
 
-var highlighter = function(event){
+// When clicked again it will increase the font size again
+var highlight = function(event){
   event.stopPropagation();
   $(this).addClass('increaseFontSize')
 }
 
+// When a player is moved un-highlight
+//if clicked again append increaseFontSize
+//clicked again remove the increaseFontSize
 var playerSelected = function(event){
-
   event.stopPropagation();
   var $increaseFontSize = $('.increaseFontSize');
   $('.increaseFontSize').detach();
